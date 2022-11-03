@@ -7,9 +7,9 @@ char digito[10]={'0','1','2','3','4','5','6','7','8','9'};
 struct reservadas{
     char lexema[30];
     int codigo;
-}reservadas[15];
+}reservadas[19];
 int comparaReser(char palabra[30]){
-    for(int i=0;i<15;i++){
+    for(int i=0;i<19;i++){
         if(palabra==reservadas[i].lexema)
             return reservadas[i].codigo;
     }
@@ -46,6 +46,14 @@ void inicializa(){
     reservadas[13].codigo=113;
     strcpy(reservadas[14].lexema,"return");
     reservadas[14].codigo=114;
+    strcpy(reservadas[15].lexema,"int");
+    reservadas[15].codigo=115;
+    strcpy(reservadas[16].lexema,"float");
+    reservadas[16].codigo=116;
+    strcpy(reservadas[17].lexema,"char");
+    reservadas[17].codigo=117;
+    strcpy(reservadas[18].lexema,"double");
+    reservadas[18].codigo=118;
 }
 
 char comparaChar(char caracter){
@@ -280,7 +288,7 @@ char* estadoFinal(int estado, char cadena[]){
             break;
     case 30: printf("NUM_EXPONENCIAL"); return "206";
             break;
-    case 38: printf("PR_INCLUDE"); return "115";
+    case 38: printf("PR_INCLUDE"); return "119";
             break;
     default: return "0";
         break;
